@@ -4,7 +4,6 @@
  * swap_ints - integers are swaped in an array.
  * @a: The first integer.
  * @b: The second integer.
- * note integer a and b are swapped
  */
 void swap_ints(int *a, int *b)
 {
