@@ -1,44 +1,41 @@
 #include "sort.h"
-
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
+ * swap_bubble - function to swap/sort.
+ *@a: variable to swap.
+ *@b: variable to swap.
+ * Return: void.
  */
-void swap_ints(int *a, int *b)
+void swap_bubble(int *a, int *b)
 {
-	int tmp;
+	int temp;
 
-	tmp = *a;
+	temp = *a;
 	*a = *b;
-	*b = tmp;
+	*b = temp;
 }
 
 /**
- * selection_sort - Sort an array of integers in ascending order
- *                  using the selection sort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
- *
- * Description: Prints the array after each swap.
+ * selection_sort - sorting array via selection sort method.
+ *@array: array to be sorted.
+ *@size: size of array.
+ * Return: Always 0
  */
 void selection_sort(int *array, size_t size)
 {
-	int *min;
 	size_t i, j;
+	int *min_idx;
 
-	if (array == NULL || size < 2)
-		return;
-
-	for (i = 0; i < size - 1; i++)
+	for (i = 0;  i < size - 1; i++)
 	{
-		min = array + i;
+		min_idx = array + i;
 		for (j = i + 1; j < size; j++)
-			min = (array[j] < *min) ? (array + j) : min;
-
-		if ((array + i) != min)
 		{
-			swap_ints(array + i, min);
+			if (array[j] < *min_idx)
+				min_idx = (array + j);
+		}
+		if ((array + i) != min_idx)
+		{
+			swap_bubble(array + i, min_idx);
 			print_array(array, size);
 		}
 	}
