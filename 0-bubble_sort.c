@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * swap_bubble - function for sorting with swap method.
+ * swap_bubble - sorting using swap method func.
  *@a: element to be swapped.
  *@b: element to be swapped.
  * Return: nothing.
@@ -17,7 +17,7 @@ void swap_bubble(int *a, int *b)
 }
 
 /**
- * bubble_sort - sorts an array using bubble sort algorithm.
+ * bubble_sort - array sortted using bubble sort algorithm.
  *@array: array to be sorted.
  *@size: size to be sorted.
  * Return: void.
